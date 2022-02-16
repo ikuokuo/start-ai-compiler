@@ -1,0 +1,21 @@
+# 术语
+
+- Compilation
+  - AOT: [Ahead-of-time compilation](https://en.wikipedia.org/wiki/Ahead-of-time_compilation)
+  - JIT: [Just-in-time compilation](https://en.wikipedia.org/wiki/Just-in-time_compilation)
+- Computer architecture
+  - ISA: [Instruction set architecture](https://en.wikipedia.org/wiki/Instruction_set_architecture)
+- Data structures
+  - AST: [Abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
+- Domain
+  - DSA: Domain-specific architecture
+  - DSL: [Domain-specific language](https://en.wikipedia.org/wiki/Domain-specific_language)
+- IR: [Intermediate representation](https://en.wikipedia.org/wiki/Intermediate_representation)
+  - ANF: [Administrative normal form](https://en.wikipedia.org/wiki/A-normal_form)
+  - CPS: [Continuation-passing style](https://en.wikipedia.org/wiki/Continuation-passing_style)
+  - SSA: [Static single assignment form](https://en.wikipedia.org/wiki/Static_single_assignment_form)
+- [Optimizing compiler](https://en.wikipedia.org/wiki/Optimizing_compiler)
+  - Peephole: [Peephole optimization](https://en.wikipedia.org/wiki/Peephole_optimization)
+  - SCCP: [Sparse conditional constant propagation](https://en.wikipedia.org/wiki/Sparse_conditional_constant_propagation)
+- [Parallel computing](https://en.wikipedia.org/wiki/Parallel_computing)
+  - SIMD: [Single instruction, multiple data](https://en.wikipedia.org/wiki/Single_instruction,_multiple_data)
