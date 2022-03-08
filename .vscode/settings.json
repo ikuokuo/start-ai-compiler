@@ -1,0 +1,6 @@
+{
+  // Using Python environments in VS Code
+  //  https://code.visualstudio.com/docs/python/environments
+  "python.terminal.activateEnvironment": true,
+  "python.defaultInterpreterPath": "${env:HOME}/anaconda3/envs/tvm/bin/python"
+}

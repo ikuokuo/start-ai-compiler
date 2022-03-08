@@ -65,3 +65,7 @@
 
 - [术语](docs/term.md)
 - [架构](docs/arch.md)
+- TVM
+  - [TVM 安装](docs/tvm/tvm_install.md) - Ubuntu20
+  - [TVMC 调优模型](docs/tvm/tvmc_tune.md) - 命令行
+  - [AutoTVM 调优模型](docs/tvm/autotvm_tune.md) - Python 接口
