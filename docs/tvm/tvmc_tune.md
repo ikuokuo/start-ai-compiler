@@ -4,10 +4,6 @@
 
 ## TVMC 命令
 
-<!--
-conda activate tvm
--->
-
 ```bash
 pip install scipy
 

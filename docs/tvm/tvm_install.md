@@ -96,6 +96,10 @@ cp cmake/config.cmake build
 cd build
 cmake ..
 make -j`nproc`
+
+# it is recommended to use cython as FFI of TVM
+pip install cython
+make cython3 -j`nproc`
 ```
 
 ## 安装 Python 包
@@ -119,7 +123,9 @@ pip install numpy decorator attrs
 # 若用 RPC Tracker
 pip install tornado
 # 若用 auto-tuning module
-pip3 install tornado psutil xgboost cloudpickle
+pip install psutil xgboost cloudpickle
+# 若用 testing module
+pip install pytest
 
 # 测试
 python - <<-EOF

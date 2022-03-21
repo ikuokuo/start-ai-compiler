@@ -9,6 +9,7 @@
 结果：
 
 ```bash
+$ cd frameworks/tvm/autotvm_tune
 $ time python autotvm_tune.py
 # TVM 编译运行模型
 ## Downloading and Loading the ONNX Model

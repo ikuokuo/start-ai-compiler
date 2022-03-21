@@ -15,9 +15,6 @@ $ lscpu
 结果：
 
 ```bash
-$ conda activate tvm
-$ pip install pytest
-
 $ cd frameworks/tvm/te_vec_add/
 $ python te_vec_add.py
 # Writing and Scheduling Vector Addition in TE for CPU
