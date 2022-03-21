@@ -2,3 +2,4 @@
 *.npz
 *.onnx
 *.tar
+*.log

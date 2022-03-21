@@ -71,3 +71,5 @@
   - [AutoTVM 调优模型](docs/tvm/autotvm_tune.md) - Python 接口
   - [TE 向量相加](docs/tvm/te_vec_add.md)
   - [TE 矩阵相乘](docs/tvm/te_mat_mul.md)
+  - [TE 自动调优](docs/tvm/te_auto_tuning.md)
+  - [TE 自动调度](docs/tvm/te_auto_scheduling.md)
