@@ -126,6 +126,8 @@ pip install tornado
 pip install psutil xgboost cloudpickle
 # 若用 testing module
 pip install pytest
+# 若用 tvm script tir
+pip install synr
 
 # 测试
 python - <<-EOF

@@ -73,3 +73,4 @@
   - [TE 矩阵相乘](docs/tvm/te_mat_mul.md)
   - [TE 自动调优](docs/tvm/te_auto_tuning.md)
   - [TE 自动调度](docs/tvm/te_auto_scheduling.md)
+  - [TensorIR 开始](docs/tvm/tir_start.md)
