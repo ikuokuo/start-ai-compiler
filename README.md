@@ -75,3 +75,4 @@
   - [TE 自动调度](docs/tvm/te_auto_scheduling.md)
   - [TensorIR 开始](docs/tvm/tir_start.md)
   - [Relay 开始](docs/tvm/relay_start.md)
+  - [TOPI 开始](docs/tvm/topi_start.md)
