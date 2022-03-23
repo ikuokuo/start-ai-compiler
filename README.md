@@ -67,12 +67,15 @@
 - [架构](docs/arch.md)
 - TVM
   - [TVM 安装](docs/tvm/tvm_install.md) - Ubuntu20
-  - [TVMC 调优模型](docs/tvm/tvmc_tune.md) - 命令行
-  - [AutoTVM 调优模型](docs/tvm/autotvm_tune.md) - Python 接口
-  - [TE 向量相加](docs/tvm/te_vec_add.md)
-  - [TE 矩阵相乘](docs/tvm/te_mat_mul.md)
-  - [TE 自动调优](docs/tvm/te_auto_tuning.md)
-  - [TE 自动调度](docs/tvm/te_auto_scheduling.md)
-  - [TensorIR 开始](docs/tvm/tir_start.md)
-  - [Relay 开始](docs/tvm/relay_start.md)
-  - [TOPI 开始](docs/tvm/topi_start.md)
+  - TVM 使用
+    - [TVMC 调优模型](docs/tvm/tvmc_tune.md) - 命令行
+    - [AutoTVM 调优模型](docs/tvm/autotvm_tune.md) - Python 接口
+    - [TE 向量相加](docs/tvm/te_vec_add.md)
+    - [TE 矩阵相乘](docs/tvm/te_mat_mul.md)
+    - [TE 自动调优](docs/tvm/te_auto_tuning.md)
+    - [TE 自动调度](docs/tvm/te_auto_scheduling.md)
+    - [TensorIR 开始](docs/tvm/tir_start.md)
+    - [Relay 开始](docs/tvm/relay_start.md)
+    - [TOPI 开始](docs/tvm/topi_start.md)
+  - TVM 深入
+    - [TVM 架构](docs/tvm/tvm_arch.md)
