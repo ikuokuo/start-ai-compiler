@@ -12,6 +12,7 @@
   - [书籍](#书籍)
 - [笔记](#笔记)
   - [AI Compiler](#ai-compiler)
+  - [书籍笔记](#书籍笔记)
 
 <hr />
 
@@ -69,7 +70,7 @@
 - [2014-03 / 算法心得：高效算法的奥秘（第2版）](https://book.douban.com/subject/25837031/)
 - [2012-12 / 编译器设计（第2版）](https://book.douban.com/subject/20436488/)
 - [2012-01 / 计算机体系结构 - 量化研究方法（第5版）](https://book.douban.com/subject/20452387/) / [视频](https://scs.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d8c83d3a-8074-4afe-ae3b-693e2250999a)
-- [2011-03 / flex与bison（中文版）](https://book.douban.com/subject/6109479/)
+- [2011-03 / flex与bison（中文版）](https://book.douban.com/subject/6109479/) / [阅读](http://home.ustc.edu.cn/~guoxing/ebooks/flex%E4%B8%8Ebison%E4%B8%AD%E6%96%87%E7%89%88.pdf)
 - [2008-12 / 编译原理 - 原理、技术与工具](https://book.douban.com/subject/3296317/)
 - [2005-01 / 高级编译器与实现](https://book.douban.com/subject/1400374/)
 
@@ -95,3 +96,7 @@
     - [TOPI 开始](docs/tvm/topi_start.md)
   - TVM 深入
     - [TVM 架构](docs/tvm/tvm_arch.md)
+
+### 书籍笔记
+
+- [Flex 与 Bison](books/flex_bison/README.md)
