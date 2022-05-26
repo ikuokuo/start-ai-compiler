@@ -24,6 +24,6 @@ _echo "${TAG}args=\"$args\"" "1;35"
 
 cd $BASE_DIR
 find . -mindepth 2 -type f -name "Makefile" | while read -r mkfile; do
-  _echo "${TAG}make -f $mkfile args=\"$args\"" "1;35"
-  make -f $mkfile args="$args"
+  _echo "${TAG}make -f $mkfile -j$(nproc) args=\"$args\"" "1;35"
+  make -f $mkfile -j$(nproc) args="$args"
 done

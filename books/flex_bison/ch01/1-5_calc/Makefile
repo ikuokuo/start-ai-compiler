@@ -5,6 +5,6 @@ ROOT_DIR := $(abspath $(CURR_DIR)/../..)
 include $(ROOT_DIR)/build/base.mk
 
 TARGET := $(notdir $(CURR_DIR))
-SRCS += $(CURR_DIR)/wc.l
+SRCS += $(CURR_DIR)/calc.l $(CURR_DIR)/calc.y
 
 include $(ROOT_DIR)/build/rule.mk

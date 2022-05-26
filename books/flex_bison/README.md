@@ -50,9 +50,9 @@ make clean
 范例程序会输出进 `_build` 目录，如下执行：
 
 ```bash
-$ ./_build/linux-x86_64/release/1-1_wc/bin/1-1_wc
-hello flex
-       1       2      11
+$ ./_build/linux-x86_64/release/1-5_calc/bin/1-5_calc
+> (1+2)*3 + 4/2
+= 11
 ```
 
 如果只编译某一范例：
@@ -61,12 +61,32 @@ hello flex
 cd ch01/1-1_wc/
 
 # 编译 release
-make
+make -j8
 # 编译 debug
-make args="debug"
+make -j8 args="debug"
 
 # 清理
 make clean
 ```
 
 注：找原书范例，可[参考这儿](https://github.com/shaoran/flex_and_bison_updated_examples)。
+
+## 笔记
+
+### BNF 文法
+
+为了编写一个语法分析器，我们需要一定的方法来描述语法分析器所使用的把一系列记号转化为语法分析树的规则。在计算机分析程序里最常用的语言就是上下文无关文法 (Context-Free Grammar, CFG)。书写上下文无关文法的标准格式就是 Backus-Naur 范式 (Backus-Naur Form, BNF)。
+
+```txt
+<exp> ::= <factor>
+    | <exp> + <factor>
+<factor> ::= NUMBER
+    | <factor> * NUMBER
+```
+
+每一行就是一条规则，且规则总是带有递归性的。
+
+- `::=` 是、变成
+- `|` 或者
+
+Bison 的规则基本上就是 BNF，但是做了一点点简化以易于输入。

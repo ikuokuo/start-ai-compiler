@@ -14,14 +14,7 @@ OBJDIR := $(TRTDIR)/obj
 SRCS_CC := $(filter %$(CCEXT),$(SRCS))
 SRCS_CXX := $(filter %$(CXXEXT),$(SRCS))
 SRCS_LEX := $(filter %$(LEXEXT),$(SRCS))
-# $(info SRCS_CC: $(SRCS_CC))
-# $(info SRCS_CXX: $(SRCS_CXX))
-# $(info SRCS_LEX: $(SRCS_LEX))
-
-ifneq ($(strip $(INCS)),)
-  CCFLAGS += $(addprefix -I,$(patsubst %/,%,$(INCS)))
-  CXXFLAGS += $(addprefix -I,$(patsubst %/,%,$(INCS)))
-endif
+SRCS_YACC := $(filter %$(YACCEXT),$(SRCS))
 
 ifneq ($(strip $(SRCS_CXX)),)
   LDFLAGS += -lstdc++
@@ -29,11 +22,27 @@ endif
 
 ifneq ($(strip $(SRCS_LEX)),)
   SRCS_LEX_CC := $(patsubst %$(LEXEXT),%$(LEXEXTOUT),$(SRCS_LEX))
-  CCFLAGS += -Wno-implicit-function-declaration -Wno-unused-function
+  # [solution] https://stackoverflow.com/a/46223160
+  # [issue] warning: implicit declaration of function ‘fileno’
+  CCFLAGS += -D_XOPEN_SOURCE=700
   LDFLAGS += -lfl
   ifeq ($(strip $(CURR_DIR)),)
     $(error ERROR$(COLON) CURR_DIR not given, for LEX $(LEXEXT))
   endif
+endif
+
+ifneq ($(strip $(SRCS_YACC)),)
+  SRCS_YACC_CC := $(patsubst %$(YACCEXT),%$(YACCEXTOUT),$(SRCS_YACC))
+  SRCS_YACC_HH := $(patsubst %$(CCEXT),%.h,$(SRCS_YACC_CC))
+  ifeq ($(strip $(CURR_DIR)),)
+    $(error ERROR$(COLON) CURR_DIR not given, for YACC $(LEXEXT))
+  endif
+  # INCS += $(CURR_DIR)
+endif
+
+ifneq ($(strip $(INCS)),)
+  CCFLAGS += $(addprefix -I,$(patsubst %/,%,$(INCS)))
+  CXXFLAGS += $(addprefix -I,$(patsubst %/,%,$(INCS)))
 endif
 
 ifneq ($(strip $(LIBS)),)
@@ -47,7 +56,7 @@ ifneq ($(strip $(LIBS)),)
   LDFLAGS += -Wl,-rpath=$(subst $(SPACE),:,$(LIB_DIRS))
 endif
 
-SRCS_BIN := $(SRCS_CC) $(SRCS_CXX) $(SRCS_LEX_CC)
+SRCS_BIN := $(SRCS_CC) $(SRCS_CXX) $(SRCS_LEX_CC) $(SRCS_YACC_CC)
 
 ifneq ($(strip $(SRCS_BIN)),)
   SRC_DIRS := $(sort $(dir $(SRCS_BIN)))
@@ -73,7 +82,7 @@ endif
 # Special Targets
 #  https://www.gnu.org/software/make/manual/html_node/Special-Targets.html
 .PHONY: bin print clean cleanall
-.SECONDARY: $(SRCS_LEX_CC)
+.SECONDARY: $(SRCS_LEX_CC) $(SRCS_YACC_CC)
 
 bin: $(BIN)
 
@@ -84,11 +93,22 @@ $(BIN): $(OBJS)
 
 # LEX
 
-%$(LEXEXTOUT): %$(LEXEXT)
+%$(LEXEXTOUT): %$(LEXEXT) $(SRCS_YACC_CC)
 	@$(call echo,$@ < $<,1;32)
 	$(EXEC) $(LEX) -o $@ $<
 
 $(OBJDIR)/%$(LEXEXTOUT).o: $(CURR_DIR)/%$(LEXEXTOUT)
+	@$(call echo,$@ < $<,1;32)
+	@$(call md,$(@D),33)
+	$(EXEC) $(CC) $(CCFLAGS) -c $< -o $@
+
+# YACC
+
+%$(YACCEXTOUT): %$(YACCEXT)
+	@$(call echo,$@ < $<,1;32)
+	$(EXEC) $(YACC) -d -o $@ $<
+
+$(OBJDIR)/%$(YACCEXTOUT).o: $(CURR_DIR)/%$(YACCEXTOUT)
 	@$(call echo,$@ < $<,1;32)
 	@$(call md,$(@D),33)
 	$(EXEC) $(CC) $(CCFLAGS) -c $< -o $@
@@ -140,6 +160,8 @@ clean:
 	@$(call echo,Make $@)
 	@$(call rm,$(TRTDIR))
 	@$(call rm_l,$(SRCS_LEX_CC))
+	@$(call rm_l,$(SRCS_YACC_CC))
+	@$(call rm_l,$(SRCS_YACC_HH))
 
 cleanall:
 	@$(call echo,Make $@)

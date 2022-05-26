@@ -84,7 +84,8 @@ LEXEXT ?= .l
 LEXEXTOUT ?= .yy$(CCEXT)
 
 YACC := bison
-YACCEXT ?= .yy
+YACCEXT ?= .y
+YACCEXTOUT ?= .tab$(CCEXT)
 
 PRINT_EXEC ?= 0
 ifeq ($(PRINT_EXEC),1)
@@ -124,6 +125,7 @@ base_print:
 	@echo LEXEXTOUT: $(LEXEXTOUT)
 	@echo YACC: $(YACC)
 	@echo YACCEXT: $(YACCEXT)
+	@echo YACCEXTOUT: $(YACCEXTOUT)
 	@echo PRINT_EXEC: $(PRINT_EXEC)
 
 endif # _BASE_MK_

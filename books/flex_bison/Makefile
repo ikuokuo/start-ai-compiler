@@ -18,3 +18,5 @@ clean:
 	@$(call echo,Make $@)
 	@$(call rm,$(OUTDIR))
 	@$(call rm_f,*$(LEXEXTOUT))
+	@$(call rm_f,*$(YACCEXTOUT))
+	@$(call rm_f,*$(patsubst %$(CCEXT),%.h,$(YACCEXTOUT)))
