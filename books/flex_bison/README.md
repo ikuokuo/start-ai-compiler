@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD033 -->
 # Flex 与 Bison
 
 - [2011-03 / flex与bison（中文版）](https://book.douban.com/subject/6109479/) / [阅读](http://home.ustc.edu.cn/~guoxing/ebooks/flex%E4%B8%8Ebison%E4%B8%AD%E6%96%87%E7%89%88.pdf)
@@ -71,7 +72,19 @@ make clean
 
 注：找原书范例，可[参考这儿](https://github.com/shaoran/flex_and_bison_updated_examples)。
 
-## 笔记
+<hr />
+
+## 笔记：Flex
+
+### 正则表达式
+
+Flex 的正则表达式语言本质上是扩展的 POSIX 正则表达式。
+
+Flex 会匹配尽可能多的字符串、匹配在程序中更早出现的模式。
+
+<hr />
+
+## 笔记：Bison
 
 ### BNF 文法
 

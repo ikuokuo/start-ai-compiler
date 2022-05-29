@@ -26,4 +26,9 @@ cd $BASE_DIR
 find . -mindepth 2 -type f -name "Makefile" | while read -r mkfile; do
   _echo "${TAG}make -f $mkfile -j$(nproc) args=\"$args\"" "1;35"
   make -f $mkfile -j$(nproc) args="$args"
+  ret=$?
+  if [ ! $ret -eq 0 ]; then
+    _echo "make fail, ret=$ret" "1;31"
+    exit $ret
+  fi
 done
