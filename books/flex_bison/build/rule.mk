@@ -102,6 +102,9 @@ $(OBJDIR)/%$(LEXEXTOUT).o: $(CURR_DIR)/%$(LEXEXTOUT)
 	@$(call md,$(@D),33)
 	$(EXEC) $(CC) $(CCFLAGS) -c $< -o $@
 
+# .l has built-in implicit rule, override it here
+%.c: %.l
+
 # YACC
 
 %$(YACCEXTOUT): %$(YACCEXT)
@@ -112,6 +115,11 @@ $(OBJDIR)/%$(YACCEXTOUT).o: $(CURR_DIR)/%$(YACCEXTOUT)
 	@$(call echo,$@ < $<,1;32)
 	@$(call md,$(@D),33)
 	$(EXEC) $(CC) $(CCFLAGS) -c $< -o $@
+
+# .y has built-in implicit rule, override it here
+#  https://stackoverflow.com/a/12362834
+#  https://www.gnu.org/software/make/manual/html_node/Catalogue-of-Rules.html#Catalogue-of-Rules
+%.c: %.y
 
 # CC
 

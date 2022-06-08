@@ -103,3 +103,17 @@ Flex 会匹配尽可能多的字符串、匹配在程序中更早出现的模式
 - `|` 或者
 
 Bison 的规则基本上就是 BNF，但是做了一点点简化以易于输入。
+
+### 分析方法
+
+Bison 可以使用两种分析方法：
+
+- GLR (Generalized Left to Right)
+- LALR(1) (Look Ahead Left to Right with a one-token lookahead)
+  - LALR 不如 GLR 强大，但认为比 GLR 更快更容易使用
+  - LALR 其实也很强大，只是不能处理有歧义的语法
+    - 二义性文法让人迷惑要规避，但也有技巧解决
+
+### 抽象语法树
+
+AST (abstract syntax tree)
