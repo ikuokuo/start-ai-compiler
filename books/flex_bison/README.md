@@ -1,5 +1,5 @@
 <!-- markdownlint-disable MD033 -->
-# Flex 与 Bison
+# [Flex](https://github.com/westes/flex) 与 [Bison](https://github.com/akimd/bison)
 
 - [2011-03 / flex与bison（中文版）](https://book.douban.com/subject/6109479/) / [阅读](http://home.ustc.edu.cn/~guoxing/ebooks/flex%E4%B8%8Ebison%E4%B8%AD%E6%96%87%E7%89%88.pdf)
 - [2009 / flex & bison - Text Processing Tools](https://book.douban.com/subject/3568327/) / [阅读](https://web.iitd.ac.in/~sumeet/flex__bison.pdf)
@@ -117,3 +117,63 @@ Bison 可以使用两种分析方法：
 ### 抽象语法树
 
 AST (abstract syntax tree)
+
+- 移进 (shift)
+- 归约 (reduction)
+
+### 指针模型
+
+一个指针将会在每次读到一个记号（token）时在 Bison 语法中移动。
+
+- 当指针达到规则结束的位置时，该规则将被归约。
+- 在有多个指针的情况下归约一个规则会存在冲突。
+
+归约过程：
+
+```
+start: x
+     | y;
+x: A ↑;  /* 读到 A 后，指针 ↑ 达到规则 x 的末尾。仅存一个，规则 x 将被归约 */
+y: B;
+```
+
+归约/归约冲突：
+
+```
+start: x
+     | y;
+x: A ↑;  /* 读到 A 后，指针 ↑ 达到规则 x 的末尾 */
+y: A ↑;  /* 读到 A 后，指针 ↑ 达到规则 y 的末尾。存在两个，归约冲突 */
+```
+
+移进/归约冲突：
+
+```
+start: x
+     | y R;
+x: A ↑ R;  /* 读到 A 后，指针 ↑ 还在移进 */
+y: A ↑;    /* 读到 A 后，指针 ↑ 正在规约 */
+```
+
+归约正常：
+
+```
+start: x B
+     | y C;
+x: A ↑;
+y: A ↑;  /* Bison 在 A 之后会（也只能）预读一个记号，看见是 B 还是 C */
+```
+
+## 笔记：SQL
+
+SQL (Structured Query Language)
+
+- MySQL: C++ 词法分析, Bison 语法分析
+    - [sql/sql_yacc.yy](https://github.com/mysql/mysql-server/blob/8.0/sql/sql_yacc.yy)
+- PostgreSQL: Flex 词法分析, Bison 语法分析
+    - [parser/scan.l](https://github.com/postgres/postgres/blob/master/src/backend/parser/scan.l)
+    - [parser/gram.y](https://github.com/postgres/postgres/blob/master/src/backend/parser/gram.y)
+
+### 逆波兰式
+
+本书记号化的 SQL 版本将使用逆波兰式 (Reverse Polish Notation，RPN)。
