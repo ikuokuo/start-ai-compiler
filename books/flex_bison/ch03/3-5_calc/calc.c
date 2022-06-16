@@ -153,8 +153,8 @@ newflow(int nodetype, struct ast *cond, struct ast *tl, struct ast *el)
 {
   struct flow *a = malloc(sizeof(struct flow));
   if (!a) {
-  yyerror("out of space");
-  exit(0);
+    yyerror("out of space");
+    exit(0);
   }
 
   a->nodetype = nodetype;
@@ -333,8 +333,8 @@ callbuiltin(struct fncall *f)
       printf("= %4.4g\n", v);
       return v;
     default:
-    yyerror("Unknown built-in function %d", functype);
-    return 0.0;
+      yyerror("Unknown built-in function %d", functype);
+      return 0.0;
   }
 }
 

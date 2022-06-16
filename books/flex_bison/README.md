@@ -164,6 +164,20 @@ x: A ↑;
 y: A ↑;  /* Bison 在 A 之后会（也只能）预读一个记号，看见是 B 还是 C */
 ```
 
+### GLR 分析
+
+```
+%glr-parser
+%expect 2
+%expect-rr 59
+```
+
+### C++ 语法分析器
+
+Bison 可以创建使用 C++ 的语法分析器，且都是可重入的。
+
+虽然 Flex 也可以创建 C++ 的词法分析器，但不能很好工作，所以建议用 C 版的。
+
 ## 笔记：SQL
 
 SQL (Structured Query Language)

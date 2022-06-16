@@ -17,6 +17,7 @@ debug:
 clean:
 	@$(call echo,Make $@)
 	@$(call rm,$(OUTDIR))
-	@$(call rm_f,*$(LEXEXTOUT))
-	@$(call rm_f,*$(YACCEXTOUT))
-	@$(call rm_f,*$(patsubst %$(CCEXT),%.h,$(YACCEXTOUT)))
+	@$(call rm_f,*.lex.[h|c])
+	@$(call rm_f,*.tab.[h|c])
+	@$(call rm_f,*.yy.[h|c])
+	@#$(CURR_DIR)/clean.sh

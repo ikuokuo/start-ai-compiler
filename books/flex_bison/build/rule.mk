@@ -22,6 +22,7 @@ endif
 
 ifneq ($(strip $(SRCS_LEX)),)
   SRCS_LEX_CC := $(patsubst %$(LEXEXT),%$(LEXEXTOUT),$(SRCS_LEX))
+  SRCS_LEX_HH := $(patsubst %$(CCEXT),%.h,$(SRCS_LEX_CC))
   # [solution] https://stackoverflow.com/a/46223160
   # [issue] warning: implicit declaration of function ‘fileno’
   CCFLAGS += -D_XOPEN_SOURCE=700
@@ -70,6 +71,8 @@ OBJS := $(notdir $(SRCS_BIN))
 OBJS := $(addsuffix .o,$(OBJS))
 OBJS := $(addprefix $(OBJDIR)/,$(OBJS))
 
+ifeq ($(NO_DEPS),)
+
 DEPS := $(patsubst %.o,%.d,$(OBJS))
 # $(info DEPS: $(DEPS))
 
@@ -79,10 +82,12 @@ else ifeq ($(filter bin,$(MAKECMDGOALS)),bin)
   -include $(DEPS)
 endif
 
+endif
+
 # Special Targets
 #  https://www.gnu.org/software/make/manual/html_node/Special-Targets.html
 .PHONY: bin print clean cleanall
-.SECONDARY: $(SRCS_LEX_CC) $(SRCS_YACC_CC)
+.SECONDARY: $(SRCS_LEX_CC) $(SRCS_LEX_HH) $(SRCS_YACC_CC) $(SRCS_YACC_HH)
 
 bin: $(BIN)
 
@@ -93,11 +98,11 @@ $(BIN): $(OBJS)
 
 # LEX
 
-%$(LEXEXTOUT): %$(LEXEXT) $(SRCS_YACC_CC)
+%$(LEXEXTOUT): %$(LEXEXT)
 	@$(call echo,$@ < $<,1;32)
 	$(EXEC) $(LEX) -o $@ $<
 
-$(OBJDIR)/%$(LEXEXTOUT).o: $(CURR_DIR)/%$(LEXEXTOUT)
+$(OBJDIR)/%$(LEXEXTOUT).o: $(CURR_DIR)/%$(LEXEXTOUT) $(CURR_DIR)/%$(YACCEXTOUT)
 	@$(call echo,$@ < $<,1;32)
 	@$(call md,$(@D),33)
 	$(EXEC) $(CC) $(CCFLAGS) -c $< -o $@
@@ -111,7 +116,7 @@ $(OBJDIR)/%$(LEXEXTOUT).o: $(CURR_DIR)/%$(LEXEXTOUT)
 	@$(call echo,$@ < $<,1;32)
 	$(EXEC) $(YACC) -d -o $@ $<
 
-$(OBJDIR)/%$(YACCEXTOUT).o: $(CURR_DIR)/%$(YACCEXTOUT)
+$(OBJDIR)/%$(YACCEXTOUT).o: $(CURR_DIR)/%$(YACCEXTOUT) $(CURR_DIR)/%$(LEXEXTOUT)
 	@$(call echo,$@ < $<,1;32)
 	@$(call md,$(@D),33)
 	$(EXEC) $(CC) $(CCFLAGS) -c $< -o $@
@@ -168,6 +173,7 @@ clean:
 	@$(call echo,Make $@)
 	@$(call rm,$(TRTDIR))
 	@$(call rm_l,$(SRCS_LEX_CC))
+	@$(call rm_l,$(SRCS_LEX_HH))
 	@$(call rm_l,$(SRCS_YACC_CC))
 	@$(call rm_l,$(SRCS_YACC_HH))
 

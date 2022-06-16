@@ -1,4 +1,5 @@
 _build/
+*.lex.[c|h]
 *.tab.[c|h]
-*.yy.c
+*.yy.[c|h]
 *.out
