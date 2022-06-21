@@ -100,3 +100,4 @@
 ### 书籍笔记
 
 - [Flex 与 Bison](books/flex_bison/README.md)
+- [编译器设计 2nd](books/eac2/README.md)
