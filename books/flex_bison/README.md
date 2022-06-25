@@ -183,10 +183,10 @@ Bison 可以创建使用 C++ 的语法分析器，且都是可重入的。
 SQL (Structured Query Language)
 
 - MySQL: C++ 词法分析, Bison 语法分析
-    - [sql/sql_yacc.yy](https://github.com/mysql/mysql-server/blob/8.0/sql/sql_yacc.yy)
+  - [sql/sql_yacc.yy](https://github.com/mysql/mysql-server/blob/8.0/sql/sql_yacc.yy)
 - PostgreSQL: Flex 词法分析, Bison 语法分析
-    - [parser/scan.l](https://github.com/postgres/postgres/blob/master/src/backend/parser/scan.l)
-    - [parser/gram.y](https://github.com/postgres/postgres/blob/master/src/backend/parser/gram.y)
+  - [parser/scan.l](https://github.com/postgres/postgres/blob/master/src/backend/parser/scan.l)
+  - [parser/gram.y](https://github.com/postgres/postgres/blob/master/src/backend/parser/gram.y)
 
 ### 逆波兰式
 
