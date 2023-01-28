@@ -2,7 +2,7 @@
 # [Flex](https://github.com/westes/flex) 与 [Bison](https://github.com/akimd/bison)
 
 - [2011-03 / flex与bison（中文版）](https://book.douban.com/subject/6109479/) / [阅读](http://home.ustc.edu.cn/~guoxing/ebooks/flex%E4%B8%8Ebison%E4%B8%AD%E6%96%87%E7%89%88.pdf)
-- [2009 / flex & bison - Text Processing Tools](https://book.douban.com/subject/3568327/) / [阅读](https://web.iitd.ac.in/~sumeet/flex__bison.pdf)
+- [2009 / flex & bison - Text Processing Tools](https://book.douban.com/subject/3568327/) / [READ](https://web.iitd.ac.in/~sumeet/flex__bison.pdf)
 
 ## 简介
 

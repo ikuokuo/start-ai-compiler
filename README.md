@@ -101,3 +101,4 @@
 
 - [Flex 与 Bison](books/flex_bison/README.md)
 - [编译器设计 2nd](books/eac2/README.md)
+- [计算机组成与设计 - 硬件/软件接口 RISC-V](books/ph_riscv/README.md)
