@@ -26,6 +26,7 @@
 - [Tiramisu / MIT](https://www.csail.mit.edu/research/tiramisu-compiler): Tiramisu. A polyhedral compiler for expressing image processing, DNN, and linear/tensor algebra applications.
 - [TVM / Apache](https://tvm.apache.org/): Tensor Virtual Machine. An End to End Machine Learning Compiler Framework for CPUs, GPUs and accelerators.
 - [XLA / Google](https://www.tensorflow.org/xla): Accelerated Linear Algebra. A domain-specific compiler for linear algebra that can accelerate TensorFlow models with potentially no source code changes.
+  - [OpenXLA / Google](https://github.com/openxla/xla): XLA (Accelerated Linear Algebra) is an open-source machine learning (ML) compiler for GPUs, CPUs, and ML accelerators.
 
 ### 语言
 
