@@ -12,7 +12,9 @@
   - [书籍](#书籍)
 - [笔记](#笔记)
   - [AI Compiler](#ai-compiler)
+    - [TVM](#tvm)
   - [书籍笔记](#书籍笔记)
+- [相关](#相关)
 
 <hr />
 
@@ -83,20 +85,22 @@
 
 - [术语](docs/term.md)
 - [架构](docs/arch.md)
-- TVM
-  - [TVM 安装](docs/tvm/tvm_install.md) - Ubuntu20
-  - TVM 使用
-    - [TVMC 调优模型](docs/tvm/tvmc_tune.md) - 命令行
-    - [AutoTVM 调优模型](docs/tvm/autotvm_tune.md) - Python 接口
-    - [TE 向量相加](docs/tvm/te_vec_add.md)
-    - [TE 矩阵相乘](docs/tvm/te_mat_mul.md)
-    - [TE 自动调优](docs/tvm/te_auto_tuning.md)
-    - [TE 自动调度](docs/tvm/te_auto_scheduling.md)
-    - [TensorIR 开始](docs/tvm/tir_start.md)
-    - [Relay 开始](docs/tvm/relay_start.md)
-    - [TOPI 开始](docs/tvm/topi_start.md)
-  - TVM 深入
-    - [TVM 架构](docs/tvm/tvm_arch.md)
+
+#### TVM
+
+- [TVM 安装](docs/tvm/tvm_install.md) - Ubuntu20
+- TVM 使用
+  - [TVMC 调优模型](docs/tvm/tvmc_tune.md) - 命令行
+  - [AutoTVM 调优模型](docs/tvm/autotvm_tune.md) - Python 接口
+  - [TE 向量相加](docs/tvm/te_vec_add.md)
+  - [TE 矩阵相乘](docs/tvm/te_mat_mul.md)
+  - [TE 自动调优](docs/tvm/te_auto_tuning.md)
+  - [TE 自动调度](docs/tvm/te_auto_scheduling.md)
+  - [TensorIR 开始](docs/tvm/tir_start.md)
+  - [Relay 开始](docs/tvm/relay_start.md)
+  - [TOPI 开始](docs/tvm/topi_start.md)
+- TVM 深入
+  - [TVM 架构](docs/tvm/tvm_arch.md)
 
 ### 书籍笔记
 
@@ -104,3 +108,31 @@
 - [编译器设计 2nd](books/eac2/README.md)
 - [计算机组成与设计 - 硬件/软件接口 RISC-V](books/ph_riscv/README.md)
   - [RISC-V 软件环境](https://yyixx.com/docs/os/isa/riscv_soft)
+
+<hr />
+
+## 相关
+
+- C++
+  - [Start C++20](https://github.com/ikuokuo/start-cpp20)
+  - [Start stdexec](https://github.com/ikuokuo/start-stdexec)
+- CUDA
+  - [Start CUDA](https://github.com/ikuokuo/start-cuda)
+- Vision
+  - [Start OpenCV](https://github.com/ikuokuo/start-opencv)
+  - [Start 3D Reconstruction](https://github.com/ikuokuo/start-3d-recon)
+- Stream
+  - [RTSP Wasm Player](https://github.com/ikuokuo/rtsp-wasm-player)
+  - [Start GStreamer](https://github.com/ikuokuo/start-gstreamer)
+- Render
+  - [Start OpenGL](https://github.com/ikuokuo/start-opengl)
+- Tensor
+  - [Start PyTorch](https://github.com/ikuokuo/start-pytorch)
+  - [Start TensorFlow](https://github.com/ikuokuo/start-tensorflow)
+  - Libs: [numpy](https://numpy.org/), [xtensor](https://github.com/xtensor-stack/xtl)
+- Deep Learning (Small Model)
+  - [Read D2L](https://github.com/ikuokuo/read-d2l)
+  - [Start Deep Learning](https://github.com/ikuokuo/start-deep-learning)
+  - [Start Scaled YOLOv4](https://github.com/ikuokuo/start-scaled-yolov4)
+- Large Language Model (LLM)
+- Large Multimodal Model (LMM)
