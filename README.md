@@ -12,7 +12,8 @@
   - [书籍](#书籍)
 - [笔记](#笔记)
   - [AI Compiler](#ai-compiler)
-    - [TVM](#tvm)
+    - [MLIR](#mlir-2026-02) (2026-02)
+    - [TVM](#tvm-2022-05) (2022-05)
   - [书籍笔记](#书籍笔记)
 - [相关](#相关)
 
@@ -53,6 +54,8 @@
 
 ### 文章
 
+- [2023-03 / 谈谈对OpenAI Triton的一些理解 / 杨军](https://zhuanlan.zhihu.com/p/613244988)
+- [2022-05 / TVM 加速模型，优化推断 / GoCoding](https://zhuanlan.zhihu.com/p/518120815)
 - [2022-02 / 深度学习编译器整理 / 王钧](https://zhuanlan.zhihu.com/p/382015459)
 - [2021-09 / AI与传统编译器 / 吴建明](https://zhuanlan.zhihu.com/p/412578327)
 - [2021-08 / AI框架中图层IR的分析 / 金雪峰](https://zhuanlan.zhihu.com/p/263420069)
@@ -86,7 +89,11 @@
 - [术语](docs/term.md)
 - [架构](docs/arch.md)
 
-#### TVM
+#### MLIR (2026-02)
+
+- MLIR + Triton
+
+#### TVM (2022-05)
 
 - [TVM 安装](docs/tvm/tvm_install.md) - Ubuntu20
 - TVM 使用
