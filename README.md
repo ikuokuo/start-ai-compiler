@@ -12,7 +12,7 @@
   - [书籍](#书籍)
 - [笔记](#笔记)
   - [AI Compiler](#ai-compiler)
-    - [MLIR](#mlir-2026-02) (2026-02)
+    - [MLIR](#mlir)
     - [TVM](#tvm-2022-05) (2022-05)
   - [书籍笔记](#书籍笔记)
 - [相关](#相关)
@@ -89,9 +89,13 @@
 - [术语](docs/term.md)
 - [架构](docs/arch.md)
 
-#### MLIR (2026-02)
+#### MLIR
 
-- MLIR + Triton
+##### Triton (2026-02)
+
+- [Triton 开始](https://yyixx.com/series/mlir/triton)
+- [Triton 环境](docs/triton/triton_env.md) - Ubuntu24
+- [Triton 算子开发](docs/triton/triton_op.md)
 
 #### TVM (2022-05)
 
