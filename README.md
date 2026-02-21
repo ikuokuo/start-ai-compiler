@@ -96,6 +96,7 @@
 - [Triton 开始](https://yyixx.com/series/mlir/triton)
 - [Triton 环境](docs/triton/triton_env.md) - Ubuntu24
 - [Triton 算子开发](docs/triton/triton_op.md)
+- [Triton IR](docs/triton/triton_ir.md)
 
 #### TVM (2022-05)
 
