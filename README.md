@@ -34,6 +34,7 @@
 ### 语言
 
 - [Halide](https://halide-lang.org/): a language for fast, portable computation on images and tensors
+- [Triton](https://triton-lang.org/): a language and compiler for writing highly efficient custom Deep-Learning primitives
 
 ### 整理
 

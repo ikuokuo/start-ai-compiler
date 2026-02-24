@@ -154,7 +154,6 @@ export SCCACHE_DIR="/source/sccache"
 export SCCACHE_CACHE_SIZE="2G"
 
 cd /source/llvm-project/
-mkdir build; cd build
 cmake -GNinja -Bbuild \
 -DCMAKE_INSTALL_PREFIX="/opt/llvm" \
 -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON \

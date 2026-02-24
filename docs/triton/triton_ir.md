@@ -6,6 +6,10 @@
 Python AST → Triton IR → Triton GPU IR → LLVM IR → PTX → SASS
 ```
 
+代码：
+
+- [vecadd_ir.py](../../frameworks/triton/debug/vecadd_ir.py)
+
 运行：
 
 ```bash
